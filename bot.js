@@ -4,8 +4,7 @@ const client = new Discord.Client();
 
 
 
-client.login("mfa.S4Vc7AabtdxiR2pujKbXtf3_9XMyJVK7goY7BQ_3gPDNTEijzWZ5HeUNjCKlGM6HejS9MBCqau2MvmcmRvdp");
-
+client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
 
 
 
