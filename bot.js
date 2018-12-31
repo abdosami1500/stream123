@@ -1,52 +1,60 @@
-const settings = require("./config.json"); 
 const Discord = require('discord.js');
-const initcmd = settings.initcmd;
-const id = settings.id;
 const client = new Discord.Client();
 
-client.on('ready', () => {
-  console.log(`Hi ${client.user.tag} , This Code by : Kahrbaa `);
-  console.log('')
-  console.log(`i Have  [ " ${client.guilds.size} " ]`);
+
+
+
+client.login("mfa.S4Vc7AabtdxiR2pujKbXtf3_9XMyJVK7goY7BQ_3gPDNTEijzWZ5HeUNjCKlGM6HejS9MBCqau2MvmcmRvdp");
+
+
+
+
+client.on('ready',  () => {
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
+  console.log('by BadGuY');
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log(`Logged in as  * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log('is online')
+client.user.setStatus("dnd");
 });
 
-const developers = id
-const adminprefix = initcmd;
+
+
+
+
+
+const devs = ["447132666924498945"];
+const adminprefix = ["r"];
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
+      if (!devs.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'ply')) {
+  if (message.content.startsWith('(prefix))ply')) {
     client.user.setGame(argresult);
-      message.channel.send("**:white_check_mark: | The Playing Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
+      message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'wat')) {
+     if (message.content === ("leave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith('(prefix)wat')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send("**:white_check_mark: | The Watching Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
+      message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'lis')) {
+  if (message.content.startsWith('(prefix)lis')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send("**:white_check_mark: | The Listening Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
+      message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/i_kahrba999");
-      message.channel.send("**:white_check_mark: | The Streaming Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
+  if (message.content.startsWith('(prefix)st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/abdo sami");
+      message.channel.send(`**✅**`)
   }
-  if (message.content.startsWith(adminprefix + 'setname')) {
+  if (message.content.startsWith('(prefix)setname')) {
   client.user.setUsername(argresult).then
       message.channel.send(`Changing The Name To ..**${argresult}** `)
 } else
-if (message.content.startsWith(adminprefix + 'setavatar')) {
+if (message.content.startsWith('(prefix)setavatar')) {
   client.user.setAvatar(argresult);
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
-
-
-
-
-client.login(settings.token);
