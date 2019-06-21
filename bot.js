@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = "r";
-var adminprefix = '#'
+var adminprefix = 'r'
 
 
 const developers = ["551422413108281345"]
