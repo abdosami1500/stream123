@@ -25,7 +25,7 @@ client.on('message', message => {
       message.channel.send(`**✅   ${argresult}**`)
   } else 
   if (message.content.startsWith(adminprefix + 'sets')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/dream");
+    client.user.setGame(argresult, "https://www.twitch.tv/abdosami757");
       message.channel.send(`**✅**`)
   }
   if (message.content.startsWith(adminprefix + 'setname')) {
